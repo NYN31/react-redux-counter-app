@@ -1,8 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { incrementCounter } from "../services/actions/CounterAction";
-// import resetCounter from "../services/actions/CounterAction";
-// import decrementCounter from "../services/actions/CounterAction";
+import {
+  incrementCounter,
+  decrementCounter,
+  resetCounter,
+} from "../services/actions/CounterAction.js";
 
 const Counter = () => {
   const count = useSelector((state) => state.count);
@@ -11,12 +13,12 @@ const Counter = () => {
   function handleIncrementCount() {
     dispatch(incrementCounter());
   }
-  //   const handleDecrementCount = () => {
-  //     dispatch(decrementCounter());
-  //   };
-  //   const handleResetCount = () => {
-  //     dispatch(resetCounter());
-  //   };
+  const handleDecrementCount = () => {
+    dispatch(decrementCounter());
+  };
+  const handleResetCount = () => {
+    dispatch(resetCounter());
+  };
   const mystyle = {
     color: "#FFFFFF",
     backgroundColor: "#e2136e",
@@ -35,12 +37,12 @@ const Counter = () => {
       <button style={mystyle} onClick={handleIncrementCount}>
         Increment
       </button>
-      {/* <button style={mystyle} onClick={handleDecrementCount}>
+      <button style={mystyle} onClick={handleDecrementCount}>
         Decrement
       </button>
       <button style={mystyle} onClick={handleResetCount}>
         Reset
-      </button> */}
+      </button>
     </div>
   );
 };
